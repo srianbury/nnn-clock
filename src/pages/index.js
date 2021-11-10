@@ -42,7 +42,7 @@ const PercentComplete = () => {
     const year = now.getFullYear();
     const baseHour = now.getHours();
     const ampm = baseHour < 12 ? 'am' : 'pm';
-    const hour = baseHour === 0 ? 12 : baseHour % 12;
+    const hour = baseHour % 12 === 0 ? 12 : baseHour % 12;
     const minute = ("0" + now.getMinutes()).slice(-2);
     const second = ("0" + now.getSeconds()).slice(-2);
 
