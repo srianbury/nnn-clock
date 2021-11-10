@@ -38,13 +38,15 @@ const PercentComplete = () => {
 
   function formattedTime(){
     const monthShort = now.toLocaleDateString(undefined, { month: 'short' });
-    const day = ("0" + now.getUTCDate()).slice(-2);
-    const year = now.getUTCFullYear();
-    const hour = ("0" + now.getUTCHours()).slice(-2);
-    const minute = ("0" + now.getUTCMinutes()).slice(-2);
-    const second = ("0" + now.getUTCSeconds()).slice(-2);
+    const day = ("0" + now.getDate()).slice(-2);
+    const year = now.getFullYear();
+    const baseHour = now.getHours();
+    const ampm = baseHour < 12 ? 'pm' : 'am';
+    const hour = baseHour === 0 ? 12 : baseHour % 12;
+    const minute = ("0" + now.getMinutes()).slice(-2);
+    const second = ("0" + now.getSeconds()).slice(-2);
 
-    return `${monthShort}. ${day}, ${year} ${hour}:${minute}:${second}`;
+    return `${monthShort}. ${day}, ${year} ${hour}:${minute}:${second} ${ampm}`;
   }
 
   return <div>
