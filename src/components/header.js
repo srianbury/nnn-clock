@@ -1,31 +1,39 @@
 import * as React from "react";
 import PropTypes from "prop-types";
-import { Link } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
+      background: "#ff4500",
+      marginBottom: "10px",
     }}
   >
     <div
       style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        margin: "0px auto",
+        maxWidth: "960px",
+        padding: "10px 1.0875rem 10px",
       }}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
+      <StaticImage
+        src="../images/nnn-icon.png"
+        formats={["auto", "webp", "avif"]}
+        alt="NNN Icon"
+        width={70}
+        style={{
+          verticalAlign: "middle",
+        }}
+      />
+      <h1
+        style={{
+          display: "inline-block",
+          marginLeft: "10px",
+          marginBottom: "0px",
+          textAlign: "center",
+        }}
+      >
+        {siteTitle}
       </h1>
     </div>
   </header>
